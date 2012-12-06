@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <!-- For more information on Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID=237468 -->
+    <section name="entityFramework" type="System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+  </configSections>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0" />
+  </startup>
+  <entityFramework>
+    <defaultConnectionFactory type="System.Data.Entity.Infrastructure.LocalDbConnectionFactory, EntityFramework">
+      <parameters>
+        <parameter value="v11.0" />
+      </parameters>
+    </defaultConnectionFactory>
+  </entityFramework>
+<connectionStrings><add name="CallOutcomeContext" connectionString="metadata=res://*/CallOutcomeModel.csdl|res://*/CallOutcomeModel.ssdl|res://*/CallOutcomeModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=PERCEPSRVR;initial catalog=DB2;persist security info=True;user id=sa;password=percep5%;MultipleActiveResultSets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" /></connectionStrings><system.serviceModel>
+    <bindings>
+      <wsHttpBinding>
+        <binding name="wsHttpBinding"
+                 closeTimeout="00:02:00" openTimeout="00:02:00" receiveTimeout="00:02:00" sendTimeout="00:02:00">
+          <security mode="TransportWithMessageCredential">
+            <transport clientCredentialType="None" />
+            <message clientCredentialType="UserName" />
+          </security>
+<!--          <reliableSession enabled="true" />  -->
+        </binding>
+      </wsHttpBinding>
+    </bindings>
+    <client>
+      <endpoint address="https://www.mollymaid.com/lmsapi/wcf_v1/LeadService.svc"
+        binding="wsHttpBinding" bindingConfiguration="wsHttpBinding"
+        contract="ServiceReference.ILeadService" name="wsHttpBinding" />
+    </client>
+  </system.serviceModel>
+</configuration>

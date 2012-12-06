@@ -1,0 +1,13 @@
+C:\Projects\LeadOutcomeSubmission\LeadOutcomeSubmission\bin\Release\LeadOutcomeSubmission.exe
+C:\Projects\LeadOutcomeSubmission\LeadOutcomeSubmission\obj\Release\CallOutcomeSubmission.csprojResolveAssemblyReference.cache
+C:\Projects\LeadOutcomeSubmission\LeadOutcomeSubmission\obj\Release\Perceptionist.Services.CallOutcomeSubmission.CallOutcomeSubmission.resources
+C:\Projects\LeadOutcomeSubmission\LeadOutcomeSubmission\obj\Release\Perceptionist.Services.CallOutcomeSubmission.ProjectInstaller.resources
+C:\Projects\LeadOutcomeSubmission\LeadOutcomeSubmission\obj\Release\CallOutcomeSubmission.csproj.GenerateResource.Cache
+C:\Projects\LeadOutcomeSubmission\LeadOutcomeSubmission\bin\Release\CallOutcomeSubmission.exe.config
+C:\Projects\LeadOutcomeSubmission\LeadOutcomeSubmission\bin\Release\CallOutcomeSubmission.exe
+C:\Projects\LeadOutcomeSubmission\LeadOutcomeSubmission\bin\Release\CallOutcomeSubmission.pdb
+C:\Projects\LeadOutcomeSubmission\LeadOutcomeSubmission\obj\Release\CallOutcomeSubmission.exe
+C:\Projects\LeadOutcomeSubmission\LeadOutcomeSubmission\obj\Release\CallOutcomeSubmission.pdb
+C:\Projects\CallOutcomeSubmission\CallOutcomeSubmission\bin\Release\CallOutcomeSubmission.exe.config
+C:\Projects\CallOutcomeSubmission\CallOutcomeSubmission\obj\Release\CallOutcomeSubmission.exe
+C:\Projects\CallOutcomeSubmission\CallOutcomeSubmission\obj\Release\CallOutcomeSubmission.pdb

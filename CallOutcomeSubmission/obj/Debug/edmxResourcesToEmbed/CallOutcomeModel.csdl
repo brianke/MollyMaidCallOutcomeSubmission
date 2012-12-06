@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CallOutcomeModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="CallOutcomeContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="T_Call" EntityType="CallOutcomeModel.T_Call" />
+    <EntitySet Name="T_LeadVendorEmailHeader" EntityType="CallOutcomeModel.T_LeadVendorEmailHeader" />
+    <EntitySet Name="T_MollyMaidCallOutcome" EntityType="CallOutcomeModel.T_MollyMaidCallOutcome" />
+    <AssociationSet Name="FK_T_MollyMaidCallOutcome_T_Call" Association="CallOutcomeModel.FK_T_MollyMaidCallOutcome_T_Call">
+      <End Role="T_Call" EntitySet="T_Call" />
+      <End Role="T_MollyMaidCallOutcome" EntitySet="T_MollyMaidCallOutcome" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_MollyMaidCallOutcome_T_LeadVendorEmailHeader" Association="CallOutcomeModel.FK_T_MollyMaidCallOutcome_T_LeadVendorEmailHeader">
+      <End Role="T_LeadVendorEmailHeader" EntitySet="T_LeadVendorEmailHeader" />
+      <End Role="T_MollyMaidCallOutcome" EntitySet="T_MollyMaidCallOutcome" />
+    </AssociationSet>
+    <EntitySet Name="T_CallNeed" EntityType="CallOutcomeModel.T_CallNeed" />
+    <EntitySet Name="T_L_Need" EntityType="CallOutcomeModel.T_L_Need" />
+    <AssociationSet Name="FK_T_Call_T_L_Need" Association="CallOutcomeModel.FK_T_Call_T_L_Need">
+      <End Role="T_L_Need" EntitySet="T_L_Need" />
+      <End Role="T_Call" EntitySet="T_Call" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_CallNeed_T_Call" Association="CallOutcomeModel.FK_T_CallNeed_T_Call">
+      <End Role="T_Call" EntitySet="T_Call" />
+      <End Role="T_CallNeed" EntitySet="T_CallNeed" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_CallNeed_T_L_Need" Association="CallOutcomeModel.FK_T_CallNeed_T_L_Need">
+      <End Role="T_L_Need" EntitySet="T_L_Need" />
+      <End Role="T_CallNeed" EntitySet="T_CallNeed" />
+    </AssociationSet>
+    <EntitySet Name="T_L_Outcome" EntityType="CallOutcomeModel.T_L_Outcome" />
+    <AssociationSet Name="FK_T_Call_T_L_Outcome" Association="CallOutcomeModel.FK_T_Call_T_L_Outcome">
+      <End Role="T_L_Outcome" EntitySet="T_L_Outcome" />
+      <End Role="T_Call" EntitySet="T_Call" />
+    </AssociationSet>
+    <EntitySet Name="T_L_NeedField" EntityType="CallOutcomeModel.T_L_NeedField" />
+    <AssociationSet Name="FK_T_CallNeed_T_L_NeedField" Association="CallOutcomeModel.FK_T_CallNeed_T_L_NeedField">
+      <End Role="T_L_NeedField" EntitySet="T_L_NeedField" />
+      <End Role="T_CallNeed" EntitySet="T_CallNeed" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_L_NeedField_T_L_Need" Association="CallOutcomeModel.FK_T_L_NeedField_T_L_Need">
+      <End Role="T_L_Need" EntitySet="T_L_Need" />
+      <End Role="T_L_NeedField" EntitySet="T_L_NeedField" />
+    </AssociationSet>
+    <EntitySet Name="T_Company" EntityType="CallOutcomeModel.T_Company" />
+    <AssociationSet Name="FK_T_Call_T_Company" Association="CallOutcomeModel.FK_T_Call_T_Company">
+      <End Role="T_Company" EntitySet="T_Company" />
+      <End Role="T_Call" EntitySet="T_Call" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="T_Call">
+    <Key>
+      <PropertyRef Name="CallID" />
+    </Key>
+    <Property Type="Int32" Name="CallID" Nullable="false" />
+    <Property Type="String" Name="DID" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="CompanyID" />
+    <Property Type="Int32" Name="EmployeeID" />
+    <Property Type="Int32" Name="CallerID" />
+    <Property Type="String" Name="CallerPhoneNumber" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CallerName" MaxLength="115" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CallerCompany" MaxLength="75" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="CallerRelationshipID" />
+    <Property Type="Int32" Name="NeedID" />
+    <Property Type="Int32" Name="OutcomeID" />
+    <Property Type="Int32" Name="CallDispositionID" />
+    <Property Type="String" Name="Message" MaxLength="7500" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="TVCallID" />
+    <Property Type="Boolean" Name="Billable" />
+    <Property Type="DateTime" Name="EnteredOn" Precision="3" />
+    <Property Type="String" Name="EnteredBy" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="Binary" Name="Concurrency" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Type="String" Name="PerceptionistID" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Db2ID" MaxLength="38" FixedLength="true" Unicode="false" />
+    <Property Type="DateTime" Name="DisconnectedOn" Precision="3" />
+    <Property Type="Byte" Name="CallDirection" />
+    <Property Type="String" Name="CallActions" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="CallLogID" />
+    <Property Type="Int32" Name="CallCampaignDetailID" />
+    <Property Type="String" Name="AudioFilename" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="T_MollyMaidCallOutcome" Relationship="CallOutcomeModel.FK_T_MollyMaidCallOutcome_T_Call" FromRole="T_Call" ToRole="T_MollyMaidCallOutcome" />
+    <NavigationProperty Name="T_L_Need" Relationship="CallOutcomeModel.FK_T_Call_T_L_Need" FromRole="T_Call" ToRole="T_L_Need" />
+    <NavigationProperty Name="T_CallNeed" Relationship="CallOutcomeModel.FK_T_CallNeed_T_Call" FromRole="T_Call" ToRole="T_CallNeed" />
+    <NavigationProperty Name="T_L_Outcome" Relationship="CallOutcomeModel.FK_T_Call_T_L_Outcome" FromRole="T_Call" ToRole="T_L_Outcome" />
+    <NavigationProperty Name="T_Company" Relationship="CallOutcomeModel.FK_T_Call_T_Company" FromRole="T_Call" ToRole="T_Company" />
+  </EntityType>
+  <EntityType Name="T_LeadVendorEmailHeader">
+    <Key>
+      <PropertyRef Name="LeadVendorEmailID" />
+    </Key>
+    <Property Type="Int32" Name="LeadVendorEmailID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="LeadVendorAccountID" Nullable="false" />
+    <Property Type="String" Name="email_from" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="email_to" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="email_date" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="email_subject" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="email_text" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="EnteredOn" Precision="3" />
+    <Property Type="String" Name="EnteredBy" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CallbackOn" Precision="3" />
+    <Property Type="String" Name="FranchiseNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Byte" Name="RemoveFromList" Nullable="false" />
+    <NavigationProperty Name="T_MollyMaidCallOutcome" Relationship="CallOutcomeModel.FK_T_MollyMaidCallOutcome_T_LeadVendorEmailHeader" FromRole="T_LeadVendorEmailHeader" ToRole="T_MollyMaidCallOutcome" />
+  </EntityType>
+  <EntityType Name="T_MollyMaidCallOutcome">
+    <Key>
+      <PropertyRef Name="CallOutcomeID" />
+    </Key>
+    <Property Type="Int32" Name="CallOutcomeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="CallID" Nullable="false" />
+    <Property Type="Int32" Name="LeadVendorEmailID" />
+    <Property Type="Int32" Name="MollyMaidLeadActionID" />
+    <Property Type="String" Name="LeadAction" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="EnteredOn" Nullable="false" Precision="3" />
+    <NavigationProperty Name="T_Call" Relationship="CallOutcomeModel.FK_T_MollyMaidCallOutcome_T_Call" FromRole="T_MollyMaidCallOutcome" ToRole="T_Call" />
+    <NavigationProperty Name="T_LeadVendorEmailHeader" Relationship="CallOutcomeModel.FK_T_MollyMaidCallOutcome_T_LeadVendorEmailHeader" FromRole="T_MollyMaidCallOutcome" ToRole="T_LeadVendorEmailHeader" />
+    <Property Type="DateTime" Name="ProcessedOn" Precision="3" />
+  </EntityType>
+  <Association Name="FK_T_MollyMaidCallOutcome_T_Call">
+    <End Type="CallOutcomeModel.T_Call" Role="T_Call" Multiplicity="1" />
+    <End Type="CallOutcomeModel.T_MollyMaidCallOutcome" Role="T_MollyMaidCallOutcome" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Call">
+        <PropertyRef Name="CallID" />
+      </Principal>
+      <Dependent Role="T_MollyMaidCallOutcome">
+        <PropertyRef Name="CallID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_MollyMaidCallOutcome_T_LeadVendorEmailHeader">
+    <End Type="CallOutcomeModel.T_LeadVendorEmailHeader" Role="T_LeadVendorEmailHeader" Multiplicity="0..1" />
+    <End Type="CallOutcomeModel.T_MollyMaidCallOutcome" Role="T_MollyMaidCallOutcome" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_LeadVendorEmailHeader">
+        <PropertyRef Name="LeadVendorEmailID" />
+      </Principal>
+      <Dependent Role="T_MollyMaidCallOutcome">
+        <PropertyRef Name="LeadVendorEmailID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="T_CallNeed">
+    <Key>
+      <PropertyRef Name="CallNeedID" />
+    </Key>
+    <Property Type="Int32" Name="CallNeedID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="CallID" Nullable="false" />
+    <Property Type="Int32" Name="NeedID" Nullable="false" />
+    <Property Type="Int32" Name="NeedFieldID" Nullable="false" />
+    <Property Type="String" Name="ValueData" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="EnteredOn" Nullable="false" Precision="3" />
+    <Property Type="String" Name="EnteredBy" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="Binary" Name="Concurrency" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Type="Boolean" Name="Visible" Nullable="false" />
+    <Property Type="Boolean" Name="HasBeenVisited" Nullable="false" />
+    <NavigationProperty Name="T_Call" Relationship="CallOutcomeModel.FK_T_CallNeed_T_Call" FromRole="T_CallNeed" ToRole="T_Call" />
+    <NavigationProperty Name="T_L_Need" Relationship="CallOutcomeModel.FK_T_CallNeed_T_L_Need" FromRole="T_CallNeed" ToRole="T_L_Need" />
+    <NavigationProperty Name="T_L_NeedField" Relationship="CallOutcomeModel.FK_T_CallNeed_T_L_NeedField" FromRole="T_CallNeed" ToRole="T_L_NeedField" />
+  </EntityType>
+  <EntityType Name="T_L_Need">
+    <Key>
+      <PropertyRef Name="NeedID" />
+    </Key>
+    <Property Type="Int32" Name="NeedID" Nullable="false" />
+    <Property Type="String" Name="Need" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Comment" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="EnteredOn" Precision="3" />
+    <Property Type="String" Name="EnteredBy" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="Binary" Name="Concurrency" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Type="String" Name="GroupBy" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsCalendarNeed" />
+    <Property Type="Boolean" Name="IsFAQ" />
+    <Property Type="Byte" Name="CalendarAction" />
+    <Property Type="String" Name="BillingTypeID" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="Disabled" />
+    <NavigationProperty Name="T_Call" Relationship="CallOutcomeModel.FK_T_Call_T_L_Need" FromRole="T_L_Need" ToRole="T_Call" />
+    <NavigationProperty Name="T_CallNeed" Relationship="CallOutcomeModel.FK_T_CallNeed_T_L_Need" FromRole="T_L_Need" ToRole="T_CallNeed" />
+    <NavigationProperty Name="T_L_NeedField" Relationship="CallOutcomeModel.FK_T_L_NeedField_T_L_Need" FromRole="T_L_Need" ToRole="T_L_NeedField" />
+  </EntityType>
+  <Association Name="FK_T_Call_T_L_Need">
+    <End Type="CallOutcomeModel.T_L_Need" Role="T_L_Need" Multiplicity="0..1" />
+    <End Type="CallOutcomeModel.T_Call" Role="T_Call" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_L_Need">
+        <PropertyRef Name="NeedID" />
+      </Principal>
+      <Dependent Role="T_Call">
+        <PropertyRef Name="NeedID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_CallNeed_T_Call">
+    <End Type="CallOutcomeModel.T_Call" Role="T_Call" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="CallOutcomeModel.T_CallNeed" Role="T_CallNeed" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Call">
+        <PropertyRef Name="CallID" />
+      </Principal>
+      <Dependent Role="T_CallNeed">
+        <PropertyRef Name="CallID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_CallNeed_T_L_Need">
+    <End Type="CallOutcomeModel.T_L_Need" Role="T_L_Need" Multiplicity="1" />
+    <End Type="CallOutcomeModel.T_CallNeed" Role="T_CallNeed" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_L_Need">
+        <PropertyRef Name="NeedID" />
+      </Principal>
+      <Dependent Role="T_CallNeed">
+        <PropertyRef Name="NeedID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="T_L_Outcome">
+    <Key>
+      <PropertyRef Name="OutcomeID" />
+    </Key>
+    <Property Type="Int32" Name="OutcomeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Outcome" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Comment" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="EnteredOn" Precision="3" />
+    <Property Type="String" Name="EnteredBy" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="Binary" Name="Concurrency" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Type="Boolean" Name="Disabled" />
+    <Property Type="Int32" Name="CCDetailStatusID" />
+    <NavigationProperty Name="T_Call" Relationship="CallOutcomeModel.FK_T_Call_T_L_Outcome" FromRole="T_L_Outcome" ToRole="T_Call" />
+  </EntityType>
+  <Association Name="FK_T_Call_T_L_Outcome">
+    <End Type="CallOutcomeModel.T_L_Outcome" Role="T_L_Outcome" Multiplicity="0..1" />
+    <End Type="CallOutcomeModel.T_Call" Role="T_Call" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_L_Outcome">
+        <PropertyRef Name="OutcomeID" />
+      </Principal>
+      <Dependent Role="T_Call">
+        <PropertyRef Name="OutcomeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="T_L_NeedField">
+    <Key>
+      <PropertyRef Name="NeedFieldID" />
+    </Key>
+    <Property Type="Int32" Name="NeedFieldID" Nullable="false" />
+    <Property Type="Int32" Name="NeedID" Nullable="false" />
+    <Property Type="String" Name="FieldName" MaxLength="75" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Sequence" />
+    <Property Type="String" Name="DisplayAs" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FieldPrompt" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DataType" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Length" />
+    <Property Type="Boolean" Name="IsRequired" />
+    <Property Type="String" Name="ValidOptions" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Comment" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="EnteredOn" Precision="3" />
+    <Property Type="String" Name="EnteredBy" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="Binary" Name="Concurrency" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Type="Boolean" Name="IsRequiredForSale" Nullable="false" />
+    <NavigationProperty Name="T_CallNeed" Relationship="CallOutcomeModel.FK_T_CallNeed_T_L_NeedField" FromRole="T_L_NeedField" ToRole="T_CallNeed" />
+    <NavigationProperty Name="T_L_Need" Relationship="CallOutcomeModel.FK_T_L_NeedField_T_L_Need" FromRole="T_L_NeedField" ToRole="T_L_Need" />
+  </EntityType>
+  <Association Name="FK_T_CallNeed_T_L_NeedField">
+    <End Type="CallOutcomeModel.T_L_NeedField" Role="T_L_NeedField" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="CallOutcomeModel.T_CallNeed" Role="T_CallNeed" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_L_NeedField">
+        <PropertyRef Name="NeedFieldID" />
+      </Principal>
+      <Dependent Role="T_CallNeed">
+        <PropertyRef Name="NeedFieldID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_L_NeedField_T_L_Need">
+    <End Type="CallOutcomeModel.T_L_Need" Role="T_L_Need" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="CallOutcomeModel.T_L_NeedField" Role="T_L_NeedField" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_L_Need">
+        <PropertyRef Name="NeedID" />
+      </Principal>
+      <Dependent Role="T_L_NeedField">
+        <PropertyRef Name="NeedID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="T_Company">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Type="Int32" Name="CompanyID" Nullable="false" />
+    <Property Type="String" Name="Company" MaxLength="75" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DisplayAs" MaxLength="115" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Address1" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Address2" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Address3" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="City" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="State" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="Zip" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Phone1" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Phone2" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Fax1" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Fax2" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Email" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Website" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IndustryID" />
+    <Property Type="String" Name="AccountMgr" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="TimeZoneID" />
+    <Property Type="Boolean" Name="AdjustForDaylightSavings" />
+    <Property Type="String" Name="Bio" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DrivingInstructions" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Phone_Notes" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="EnteredOn" Precision="3" />
+    <Property Type="String" Name="EnteredBy" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="Binary" Name="Concurrency" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Type="Boolean" Name="Disabled" />
+    <Property Type="String" Name="SvcAgreementHTML" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="SvcAgreementDate" Precision="3" />
+    <Property Type="DateTime" Name="ServiceCancelledOn" Precision="3" />
+    <Property Type="String" Name="ServiceCancelledBy" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Telco_Name" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Telco_RepairContact" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Telco_RepairPhone" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Telco_CustSvcPhone" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Telco_SecurityInfo" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Phone_AA_Ext" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="Phone_UserExt" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="Phone_AfterHrsCallsGoTo" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="Phone_IVR_Notification" />
+    <Property Type="String" Name="Phone_IVR_SentNoticeTo" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="BillTo_Company" MaxLength="115" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="BillTo_Address1" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="BillTo_Address2" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="BillTo_Address3" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="BillTo_City" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="BillTo_State" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="BillTo_Zip" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="BillTo_Phone" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="BillTo_Fax" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="BillTo_Contact" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="BillTo_ContactEmail" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IncludeInSalesStats" />
+    <Property Type="String" Name="BillTo_PricingInfo" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="CC_RequireSecurityCode" />
+    <Property Type="String" Name="CC_CardsAccepted" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="Invoice_Consolidated" />
+    <Property Type="Int32" Name="Invoice_ParentCompanyID" />
+    <Property Type="DateTime" Name="ServiceActivatedOn" Precision="3" />
+    <Property Type="DateTime" Name="ServiceSuspendedOn" Precision="3" />
+    <Property Type="DateTime" Name="PilotProgramEndedOn" Precision="3" />
+    <Property Type="Int32" Name="ZorID" />
+    <Property Type="DateTime" Name="WaveAcctMgtFeeStartOn" Precision="3" />
+    <Property Type="DateTime" Name="WaveAcctMgtFeeEndOn" Precision="3" />
+    <Property Type="Int32" Name="AcctMgtFeeTypeID" />
+    <Property Type="Int32" Name="BusinessUnitID" />
+    <Property Type="Int32" Name="ProductLineID" />
+    <Property Type="Int32" Name="SalesRepID" />
+    <Property Type="String" Name="FranchiseID" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="AllowImmediateRecordingAccess" />
+    <Property Type="Boolean" Name="RemoveFromNoSale" Nullable="false" />
+    <NavigationProperty Name="T_Call" Relationship="CallOutcomeModel.FK_T_Call_T_Company" FromRole="T_Company" ToRole="T_Call" />
+  </EntityType>
+  <Association Name="FK_T_Call_T_Company">
+    <End Type="CallOutcomeModel.T_Company" Role="T_Company" Multiplicity="0..1" />
+    <End Type="CallOutcomeModel.T_Call" Role="T_Call" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="T_Call">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

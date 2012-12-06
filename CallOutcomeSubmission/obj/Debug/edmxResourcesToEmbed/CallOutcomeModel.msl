@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CallOutcomeModelStoreContainer" CdmEntityContainer="CallOutcomeContext">
+    <EntitySetMapping Name="T_Call">
+      <EntityTypeMapping TypeName="CallOutcomeModel.T_Call">
+        <MappingFragment StoreEntitySet="T_Call">
+          <ScalarProperty Name="AudioFilename" ColumnName="AudioFilename" />
+          <ScalarProperty Name="CallCampaignDetailID" ColumnName="CallCampaignDetailID" />
+          <ScalarProperty Name="CallLogID" ColumnName="CallLogID" />
+          <ScalarProperty Name="CallActions" ColumnName="CallActions" />
+          <ScalarProperty Name="CallDirection" ColumnName="CallDirection" />
+          <ScalarProperty Name="DisconnectedOn" ColumnName="DisconnectedOn" />
+          <ScalarProperty Name="Db2ID" ColumnName="Db2ID" />
+          <ScalarProperty Name="PerceptionistID" ColumnName="PerceptionistID" />
+          <ScalarProperty Name="Concurrency" ColumnName="Concurrency" />
+          <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+          <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+          <ScalarProperty Name="Billable" ColumnName="Billable" />
+          <ScalarProperty Name="TVCallID" ColumnName="TVCallID" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="CallDispositionID" ColumnName="CallDispositionID" />
+          <ScalarProperty Name="OutcomeID" ColumnName="OutcomeID" />
+          <ScalarProperty Name="NeedID" ColumnName="NeedID" />
+          <ScalarProperty Name="CallerRelationshipID" ColumnName="CallerRelationshipID" />
+          <ScalarProperty Name="CallerCompany" ColumnName="CallerCompany" />
+          <ScalarProperty Name="CallerName" ColumnName="CallerName" />
+          <ScalarProperty Name="CallerPhoneNumber" ColumnName="CallerPhoneNumber" />
+          <ScalarProperty Name="CallerID" ColumnName="CallerID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="DID" ColumnName="DID" />
+          <ScalarProperty Name="CallID" ColumnName="CallID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_LeadVendorEmailHeader">
+      <EntityTypeMapping TypeName="CallOutcomeModel.T_LeadVendorEmailHeader">
+        <MappingFragment StoreEntitySet="T_LeadVendorEmailHeader">
+          <ScalarProperty Name="RemoveFromList" ColumnName="RemoveFromList" />
+          <ScalarProperty Name="FranchiseNumber" ColumnName="FranchiseNumber" />
+          <ScalarProperty Name="CallbackOn" ColumnName="CallbackOn" />
+          <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+          <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+          <ScalarProperty Name="email_text" ColumnName="email_text" />
+          <ScalarProperty Name="email_subject" ColumnName="email_subject" />
+          <ScalarProperty Name="email_date" ColumnName="email_date" />
+          <ScalarProperty Name="email_to" ColumnName="email_to" />
+          <ScalarProperty Name="email_from" ColumnName="email_from" />
+          <ScalarProperty Name="LeadVendorAccountID" ColumnName="LeadVendorAccountID" />
+          <ScalarProperty Name="LeadVendorEmailID" ColumnName="LeadVendorEmailID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_MollyMaidCallOutcome">
+      <EntityTypeMapping TypeName="CallOutcomeModel.T_MollyMaidCallOutcome">
+        <MappingFragment StoreEntitySet="T_MollyMaidCallOutcome">
+          <ScalarProperty Name="ProcessedOn" ColumnName="ProcessedOn" />
+          <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+          <ScalarProperty Name="LeadAction" ColumnName="LeadAction" />
+          <ScalarProperty Name="MollyMaidLeadActionID" ColumnName="MollyMaidLeadActionID" />
+          <ScalarProperty Name="LeadVendorEmailID" ColumnName="LeadVendorEmailID" />
+          <ScalarProperty Name="CallID" ColumnName="CallID" />
+          <ScalarProperty Name="CallOutcomeID" ColumnName="CallOutcomeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_CallNeed">
+      <EntityTypeMapping TypeName="CallOutcomeModel.T_CallNeed">
+        <MappingFragment StoreEntitySet="T_CallNeed">
+          <ScalarProperty Name="HasBeenVisited" ColumnName="HasBeenVisited" />
+          <ScalarProperty Name="Visible" ColumnName="Visible" />
+          <ScalarProperty Name="Concurrency" ColumnName="Concurrency" />
+          <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+          <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+          <ScalarProperty Name="ValueData" ColumnName="ValueData" />
+          <ScalarProperty Name="NeedFieldID" ColumnName="NeedFieldID" />
+          <ScalarProperty Name="NeedID" ColumnName="NeedID" />
+          <ScalarProperty Name="CallID" ColumnName="CallID" />
+          <ScalarProperty Name="CallNeedID" ColumnName="CallNeedID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_L_Need">
+      <EntityTypeMapping TypeName="CallOutcomeModel.T_L_Need">
+        <MappingFragment StoreEntitySet="T_L_Need">
+          <ScalarProperty Name="Disabled" ColumnName="Disabled" />
+          <ScalarProperty Name="BillingTypeID" ColumnName="BillingTypeID" />
+          <ScalarProperty Name="CalendarAction" ColumnName="CalendarAction" />
+          <ScalarProperty Name="IsFAQ" ColumnName="IsFAQ" />
+          <ScalarProperty Name="IsCalendarNeed" ColumnName="IsCalendarNeed" />
+          <ScalarProperty Name="GroupBy" ColumnName="GroupBy" />
+          <ScalarProperty Name="Concurrency" ColumnName="Concurrency" />
+          <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+          <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="Need" ColumnName="Need" />
+          <ScalarProperty Name="NeedID" ColumnName="NeedID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_L_Outcome">
+      <EntityTypeMapping TypeName="CallOutcomeModel.T_L_Outcome">
+        <MappingFragment StoreEntitySet="T_L_Outcome">
+          <ScalarProperty Name="CCDetailStatusID" ColumnName="CCDetailStatusID" />
+          <ScalarProperty Name="Disabled" ColumnName="Disabled" />
+          <ScalarProperty Name="Concurrency" ColumnName="Concurrency" />
+          <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+          <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="Outcome" ColumnName="Outcome" />
+          <ScalarProperty Name="OutcomeID" ColumnName="OutcomeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_L_NeedField">
+      <EntityTypeMapping TypeName="CallOutcomeModel.T_L_NeedField">
+        <MappingFragment StoreEntitySet="T_L_NeedField">
+          <ScalarProperty Name="IsRequiredForSale" ColumnName="IsRequiredForSale" />
+          <ScalarProperty Name="Concurrency" ColumnName="Concurrency" />
+          <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+          <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="ValidOptions" ColumnName="ValidOptions" />
+          <ScalarProperty Name="IsRequired" ColumnName="IsRequired" />
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="DataType" ColumnName="DataType" />
+          <ScalarProperty Name="FieldPrompt" ColumnName="FieldPrompt" />
+          <ScalarProperty Name="DisplayAs" ColumnName="DisplayAs" />
+          <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+          <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+          <ScalarProperty Name="NeedID" ColumnName="NeedID" />
+          <ScalarProperty Name="NeedFieldID" ColumnName="NeedFieldID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Company">
+      <EntityTypeMapping TypeName="CallOutcomeModel.T_Company">
+        <MappingFragment StoreEntitySet="T_Company">
+          <ScalarProperty Name="RemoveFromNoSale" ColumnName="RemoveFromNoSale" />
+          <ScalarProperty Name="AllowImmediateRecordingAccess" ColumnName="AllowImmediateRecordingAccess" />
+          <ScalarProperty Name="FranchiseID" ColumnName="FranchiseID" />
+          <ScalarProperty Name="SalesRepID" ColumnName="SalesRepID" />
+          <ScalarProperty Name="ProductLineID" ColumnName="ProductLineID" />
+          <ScalarProperty Name="BusinessUnitID" ColumnName="BusinessUnitID" />
+          <ScalarProperty Name="AcctMgtFeeTypeID" ColumnName="AcctMgtFeeTypeID" />
+          <ScalarProperty Name="WaveAcctMgtFeeEndOn" ColumnName="WaveAcctMgtFeeEndOn" />
+          <ScalarProperty Name="WaveAcctMgtFeeStartOn" ColumnName="WaveAcctMgtFeeStartOn" />
+          <ScalarProperty Name="ZorID" ColumnName="ZorID" />
+          <ScalarProperty Name="PilotProgramEndedOn" ColumnName="PilotProgramEndedOn" />
+          <ScalarProperty Name="ServiceSuspendedOn" ColumnName="ServiceSuspendedOn" />
+          <ScalarProperty Name="ServiceActivatedOn" ColumnName="ServiceActivatedOn" />
+          <ScalarProperty Name="Invoice_ParentCompanyID" ColumnName="Invoice_ParentCompanyID" />
+          <ScalarProperty Name="Invoice_Consolidated" ColumnName="Invoice_Consolidated" />
+          <ScalarProperty Name="CC_CardsAccepted" ColumnName="CC_CardsAccepted" />
+          <ScalarProperty Name="CC_RequireSecurityCode" ColumnName="CC_RequireSecurityCode" />
+          <ScalarProperty Name="BillTo_PricingInfo" ColumnName="BillTo_PricingInfo" />
+          <ScalarProperty Name="IncludeInSalesStats" ColumnName="IncludeInSalesStats" />
+          <ScalarProperty Name="BillTo_ContactEmail" ColumnName="BillTo_ContactEmail" />
+          <ScalarProperty Name="BillTo_Contact" ColumnName="BillTo_Contact" />
+          <ScalarProperty Name="BillTo_Fax" ColumnName="BillTo_Fax" />
+          <ScalarProperty Name="BillTo_Phone" ColumnName="BillTo_Phone" />
+          <ScalarProperty Name="BillTo_Zip" ColumnName="BillTo_Zip" />
+          <ScalarProperty Name="BillTo_State" ColumnName="BillTo_State" />
+          <ScalarProperty Name="BillTo_City" ColumnName="BillTo_City" />
+          <ScalarProperty Name="BillTo_Address3" ColumnName="BillTo_Address3" />
+          <ScalarProperty Name="BillTo_Address2" ColumnName="BillTo_Address2" />
+          <ScalarProperty Name="BillTo_Address1" ColumnName="BillTo_Address1" />
+          <ScalarProperty Name="BillTo_Company" ColumnName="BillTo_Company" />
+          <ScalarProperty Name="Phone_IVR_SentNoticeTo" ColumnName="Phone_IVR_SentNoticeTo" />
+          <ScalarProperty Name="Phone_IVR_Notification" ColumnName="Phone_IVR_Notification" />
+          <ScalarProperty Name="Phone_AfterHrsCallsGoTo" ColumnName="Phone_AfterHrsCallsGoTo" />
+          <ScalarProperty Name="Phone_UserExt" ColumnName="Phone_UserExt" />
+          <ScalarProperty Name="Phone_AA_Ext" ColumnName="Phone_AA_Ext" />
+          <ScalarProperty Name="Telco_SecurityInfo" ColumnName="Telco_SecurityInfo" />
+          <ScalarProperty Name="Telco_CustSvcPhone" ColumnName="Telco_CustSvcPhone" />
+          <ScalarProperty Name="Telco_RepairPhone" ColumnName="Telco_RepairPhone" />
+          <ScalarProperty Name="Telco_RepairContact" ColumnName="Telco_RepairContact" />
+          <ScalarProperty Name="Telco_Name" ColumnName="Telco_Name" />
+          <ScalarProperty Name="ServiceCancelledBy" ColumnName="ServiceCancelledBy" />
+          <ScalarProperty Name="ServiceCancelledOn" ColumnName="ServiceCancelledOn" />
+          <ScalarProperty Name="SvcAgreementDate" ColumnName="SvcAgreementDate" />
+          <ScalarProperty Name="SvcAgreementHTML" ColumnName="SvcAgreementHTML" />
+          <ScalarProperty Name="Disabled" ColumnName="Disabled" />
+          <ScalarProperty Name="Concurrency" ColumnName="Concurrency" />
+          <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+          <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+          <ScalarProperty Name="Phone_Notes" ColumnName="Phone_Notes" />
+          <ScalarProperty Name="DrivingInstructions" ColumnName="DrivingInstructions" />
+          <ScalarProperty Name="Bio" ColumnName="Bio" />
+          <ScalarProperty Name="AdjustForDaylightSavings" ColumnName="AdjustForDaylightSavings" />
+          <ScalarProperty Name="TimeZoneID" ColumnName="TimeZoneID" />
+          <ScalarProperty Name="AccountMgr" ColumnName="AccountMgr" />
+          <ScalarProperty Name="IndustryID" ColumnName="IndustryID" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fax2" ColumnName="Fax2" />
+          <ScalarProperty Name="Fax1" ColumnName="Fax1" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="DisplayAs" ColumnName="DisplayAs" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

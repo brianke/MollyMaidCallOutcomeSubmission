@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://www.mollymaid.com/lmsapi/wcf_v1/LeadService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SBI.MollyMaid.PerceptionistAPI.Service" />
+  <xs:element name="GetFranchiseDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="franNum" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFranchiseDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SBI.MollyMaid.PerceptionistAPI.Service" minOccurs="0" name="GetFranchiseDetailsResult" nillable="true" type="q1:Franchise" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FranchiseExists">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="franNum" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FranchiseExistsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FranchiseExistsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLeadDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="leadId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLeadDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SBI.MollyMaid.PerceptionistAPI.Service" minOccurs="0" name="GetLeadDetailsResult" nillable="true" type="q2:Lead" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLookupList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="listName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLookupListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SBI.MollyMaid.PerceptionistAPI.Service" minOccurs="0" name="GetLookupListResult" nillable="true" type="q3:ArrayOfListItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitLead">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SBI.MollyMaid.PerceptionistAPI.Service" minOccurs="0" name="lead" nillable="true" type="q4:Lead" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitLeadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SubmitLeadResult" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitLeadAction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="leadId" type="xs:int" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SBI.MollyMaid.PerceptionistAPI.Service" minOccurs="0" name="leadAction" nillable="true" type="q5:LeadAction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitLeadActionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SubmitLeadActionResult" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitLeadOutcome">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="leadId" type="xs:int" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SBI.MollyMaid.PerceptionistAPI.Service" minOccurs="0" name="outcome" nillable="true" type="q6:Outcome" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitLeadOutcomeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SubmitLeadOutcomeResult" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

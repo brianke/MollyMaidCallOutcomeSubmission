@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CallOutcomeModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="CallOutcomeModelStoreContainer">
+    <EntitySet Name="T_Call" EntityType="CallOutcomeModel.Store.T_Call" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="T_CallNeed" EntityType="CallOutcomeModel.Store.T_CallNeed" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="T_Company" EntityType="CallOutcomeModel.Store.T_Company" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="T_L_Need" EntityType="CallOutcomeModel.Store.T_L_Need" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="T_L_NeedField" EntityType="CallOutcomeModel.Store.T_L_NeedField" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="T_L_Outcome" EntityType="CallOutcomeModel.Store.T_L_Outcome" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="T_LeadVendorEmailHeader" EntityType="CallOutcomeModel.Store.T_LeadVendorEmailHeader" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="T_MollyMaidCallOutcome" EntityType="CallOutcomeModel.Store.T_MollyMaidCallOutcome" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_T_Call_T_Company" Association="CallOutcomeModel.Store.FK_T_Call_T_Company">
+      <End Role="T_Company" EntitySet="T_Company" />
+      <End Role="T_Call" EntitySet="T_Call" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Call_T_L_Need" Association="CallOutcomeModel.Store.FK_T_Call_T_L_Need">
+      <End Role="T_L_Need" EntitySet="T_L_Need" />
+      <End Role="T_Call" EntitySet="T_Call" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Call_T_L_Outcome" Association="CallOutcomeModel.Store.FK_T_Call_T_L_Outcome">
+      <End Role="T_L_Outcome" EntitySet="T_L_Outcome" />
+      <End Role="T_Call" EntitySet="T_Call" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_CallNeed_T_Call" Association="CallOutcomeModel.Store.FK_T_CallNeed_T_Call">
+      <End Role="T_Call" EntitySet="T_Call" />
+      <End Role="T_CallNeed" EntitySet="T_CallNeed" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_CallNeed_T_L_Need" Association="CallOutcomeModel.Store.FK_T_CallNeed_T_L_Need">
+      <End Role="T_L_Need" EntitySet="T_L_Need" />
+      <End Role="T_CallNeed" EntitySet="T_CallNeed" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_CallNeed_T_L_NeedField" Association="CallOutcomeModel.Store.FK_T_CallNeed_T_L_NeedField">
+      <End Role="T_L_NeedField" EntitySet="T_L_NeedField" />
+      <End Role="T_CallNeed" EntitySet="T_CallNeed" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_L_NeedField_T_L_Need" Association="CallOutcomeModel.Store.FK_T_L_NeedField_T_L_Need">
+      <End Role="T_L_Need" EntitySet="T_L_Need" />
+      <End Role="T_L_NeedField" EntitySet="T_L_NeedField" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="T_Call">
+    <Key>
+      <PropertyRef Name="CallID" />
+    </Key>
+    <Property Name="CallID" Type="int" Nullable="false" />
+    <Property Name="DID" Type="varchar" MaxLength="10" />
+    <Property Name="CompanyID" Type="int" />
+    <Property Name="EmployeeID" Type="int" />
+    <Property Name="CallerID" Type="int" />
+    <Property Name="CallerPhoneNumber" Type="varchar" MaxLength="10" />
+    <Property Name="CallerName" Type="varchar" MaxLength="115" />
+    <Property Name="CallerCompany" Type="varchar" MaxLength="75" />
+    <Property Name="CallerRelationshipID" Type="int" />
+    <Property Name="NeedID" Type="int" />
+    <Property Name="OutcomeID" Type="int" />
+    <Property Name="CallDispositionID" Type="int" />
+    <Property Name="Message" Type="varchar" MaxLength="7500" />
+    <Property Name="TVCallID" Type="int" />
+    <Property Name="Billable" Type="bit" />
+    <Property Name="EnteredOn" Type="datetime" />
+    <Property Name="EnteredBy" Type="varchar" MaxLength="15" />
+    <Property Name="Concurrency" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="PerceptionistID" Type="varchar" MaxLength="15" />
+    <Property Name="Db2ID" Type="char" MaxLength="38" />
+    <Property Name="DisconnectedOn" Type="datetime" />
+    <Property Name="CallDirection" Type="tinyint" />
+    <Property Name="CallActions" Type="text" />
+    <Property Name="CallLogID" Type="int" />
+    <Property Name="CallCampaignDetailID" Type="int" />
+    <Property Name="AudioFilename" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="T_CallNeed">
+    <Key>
+      <PropertyRef Name="CallNeedID" />
+    </Key>
+    <Property Name="CallNeedID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CallID" Type="int" Nullable="false" />
+    <Property Name="NeedID" Type="int" Nullable="false" />
+    <Property Name="NeedFieldID" Type="int" Nullable="false" />
+    <Property Name="ValueData" Type="varchar" MaxLength="1000" />
+    <Property Name="EnteredOn" Type="datetime" Nullable="false" />
+    <Property Name="EnteredBy" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="Concurrency" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Visible" Type="bit" Nullable="false" />
+    <Property Name="HasBeenVisited" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_Company">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="Company" Type="varchar" MaxLength="75" />
+    <Property Name="DisplayAs" Type="varchar" MaxLength="115" />
+    <Property Name="Address1" Type="varchar" MaxLength="100" />
+    <Property Name="Address2" Type="varchar" MaxLength="100" />
+    <Property Name="Address3" Type="varchar" MaxLength="100" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="State" Type="char" MaxLength="2" />
+    <Property Name="Zip" Type="varchar" MaxLength="10" />
+    <Property Name="Phone1" Type="varchar" MaxLength="25" />
+    <Property Name="Phone2" Type="varchar" MaxLength="25" />
+    <Property Name="Fax1" Type="varchar" MaxLength="25" />
+    <Property Name="Fax2" Type="varchar" MaxLength="25" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="Website" Type="varchar" MaxLength="100" />
+    <Property Name="IndustryID" Type="int" />
+    <Property Name="AccountMgr" Type="varchar" MaxLength="15" />
+    <Property Name="TimeZoneID" Type="int" />
+    <Property Name="AdjustForDaylightSavings" Type="bit" />
+    <Property Name="Bio" Type="text" />
+    <Property Name="DrivingInstructions" Type="text" />
+    <Property Name="Phone_Notes" Type="text" />
+    <Property Name="EnteredOn" Type="datetime" />
+    <Property Name="EnteredBy" Type="varchar" MaxLength="15" />
+    <Property Name="Concurrency" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="Disabled" Type="bit" />
+    <Property Name="SvcAgreementHTML" Type="text" />
+    <Property Name="SvcAgreementDate" Type="datetime" />
+    <Property Name="ServiceCancelledOn" Type="datetime" />
+    <Property Name="ServiceCancelledBy" Type="varchar" MaxLength="35" />
+    <Property Name="Telco_Name" Type="varchar" MaxLength="100" />
+    <Property Name="Telco_RepairContact" Type="varchar" MaxLength="35" />
+    <Property Name="Telco_RepairPhone" Type="varchar" MaxLength="20" />
+    <Property Name="Telco_CustSvcPhone" Type="varchar" MaxLength="20" />
+    <Property Name="Telco_SecurityInfo" Type="varchar" MaxLength="200" />
+    <Property Name="Phone_AA_Ext" Type="char" MaxLength="4" />
+    <Property Name="Phone_UserExt" Type="char" MaxLength="4" />
+    <Property Name="Phone_AfterHrsCallsGoTo" Type="varchar" MaxLength="20" />
+    <Property Name="Phone_IVR_Notification" Type="bit" />
+    <Property Name="Phone_IVR_SentNoticeTo" Type="varchar" MaxLength="200" />
+    <Property Name="BillTo_Company" Type="varchar" MaxLength="115" />
+    <Property Name="BillTo_Address1" Type="varchar" MaxLength="100" />
+    <Property Name="BillTo_Address2" Type="varchar" MaxLength="100" />
+    <Property Name="BillTo_Address3" Type="varchar" MaxLength="100" />
+    <Property Name="BillTo_City" Type="varchar" MaxLength="50" />
+    <Property Name="BillTo_State" Type="char" MaxLength="2" />
+    <Property Name="BillTo_Zip" Type="varchar" MaxLength="10" />
+    <Property Name="BillTo_Phone" Type="varchar" MaxLength="25" />
+    <Property Name="BillTo_Fax" Type="varchar" MaxLength="25" />
+    <Property Name="BillTo_Contact" Type="varchar" MaxLength="35" />
+    <Property Name="BillTo_ContactEmail" Type="varchar" MaxLength="100" />
+    <Property Name="IncludeInSalesStats" Type="bit" />
+    <Property Name="BillTo_PricingInfo" Type="varchar" MaxLength="250" />
+    <Property Name="CC_RequireSecurityCode" Type="bit" />
+    <Property Name="CC_CardsAccepted" Type="varchar" MaxLength="100" />
+    <Property Name="Invoice_Consolidated" Type="bit" />
+    <Property Name="Invoice_ParentCompanyID" Type="int" />
+    <Property Name="ServiceActivatedOn" Type="datetime" />
+    <Property Name="ServiceSuspendedOn" Type="datetime" />
+    <Property Name="PilotProgramEndedOn" Type="datetime" />
+    <Property Name="ZorID" Type="int" />
+    <Property Name="WaveAcctMgtFeeStartOn" Type="datetime" />
+    <Property Name="WaveAcctMgtFeeEndOn" Type="datetime" />
+    <Property Name="AcctMgtFeeTypeID" Type="int" />
+    <Property Name="BusinessUnitID" Type="int" />
+    <Property Name="ProductLineID" Type="int" />
+    <Property Name="SalesRepID" Type="int" />
+    <Property Name="FranchiseID" Type="varchar" MaxLength="20" />
+    <Property Name="AllowImmediateRecordingAccess" Type="bit" />
+    <Property Name="RemoveFromNoSale" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_L_Need">
+    <Key>
+      <PropertyRef Name="NeedID" />
+    </Key>
+    <Property Name="NeedID" Type="int" Nullable="false" />
+    <Property Name="Need" Type="varchar" MaxLength="50" />
+    <Property Name="Comment" Type="varchar" MaxLength="500" />
+    <Property Name="EnteredOn" Type="datetime" />
+    <Property Name="EnteredBy" Type="varchar" MaxLength="15" />
+    <Property Name="Concurrency" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="GroupBy" Type="varchar" MaxLength="100" />
+    <Property Name="IsCalendarNeed" Type="bit" />
+    <Property Name="IsFAQ" Type="bit" />
+    <Property Name="CalendarAction" Type="tinyint" />
+    <Property Name="BillingTypeID" Type="varchar" MaxLength="10" />
+    <Property Name="Disabled" Type="bit" />
+  </EntityType>
+  <EntityType Name="T_L_NeedField">
+    <Key>
+      <PropertyRef Name="NeedFieldID" />
+    </Key>
+    <Property Name="NeedFieldID" Type="int" Nullable="false" />
+    <Property Name="NeedID" Type="int" Nullable="false" />
+    <Property Name="FieldName" Type="varchar" MaxLength="75" />
+    <Property Name="Sequence" Type="int" />
+    <Property Name="DisplayAs" Type="varchar" MaxLength="255" />
+    <Property Name="FieldPrompt" Type="text" />
+    <Property Name="DataType" Type="varchar" MaxLength="2" />
+    <Property Name="Length" Type="int" />
+    <Property Name="IsRequired" Type="bit" />
+    <Property Name="ValidOptions" Type="text" />
+    <Property Name="Comment" Type="varchar" MaxLength="500" />
+    <Property Name="EnteredOn" Type="datetime" />
+    <Property Name="EnteredBy" Type="varchar" MaxLength="15" />
+    <Property Name="Concurrency" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="IsRequiredForSale" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_L_Outcome">
+    <Key>
+      <PropertyRef Name="OutcomeID" />
+    </Key>
+    <Property Name="OutcomeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Outcome" Type="varchar" MaxLength="50" />
+    <Property Name="Comment" Type="varchar" MaxLength="500" />
+    <Property Name="EnteredOn" Type="datetime" />
+    <Property Name="EnteredBy" Type="varchar" MaxLength="15" />
+    <Property Name="Concurrency" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="Disabled" Type="bit" />
+    <Property Name="CCDetailStatusID" Type="int" />
+  </EntityType>
+  <EntityType Name="T_LeadVendorEmailHeader">
+    <Key>
+      <PropertyRef Name="LeadVendorEmailID" />
+    </Key>
+    <Property Name="LeadVendorEmailID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LeadVendorAccountID" Type="int" Nullable="false" />
+    <Property Name="email_from" Type="varchar" MaxLength="255" />
+    <Property Name="email_to" Type="varchar" MaxLength="255" />
+    <Property Name="email_date" Type="varchar" MaxLength="50" />
+    <Property Name="email_subject" Type="varchar" MaxLength="255" />
+    <Property Name="email_text" Type="text" />
+    <Property Name="EnteredOn" Type="datetime" />
+    <Property Name="EnteredBy" Type="varchar" MaxLength="15" />
+    <Property Name="CallbackOn" Type="datetime" />
+    <Property Name="FranchiseNumber" Type="varchar" MaxLength="50" />
+    <Property Name="RemoveFromList" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_MollyMaidCallOutcome">
+    <Key>
+      <PropertyRef Name="CallOutcomeID" />
+    </Key>
+    <Property Name="CallOutcomeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CallID" Type="int" Nullable="false" />
+    <Property Name="LeadVendorEmailID" Type="int" />
+    <Property Name="MollyMaidLeadActionID" Type="int" />
+    <Property Name="LeadAction" Type="nvarchar" MaxLength="20" />
+    <Property Name="EnteredOn" Type="datetime" Nullable="false" />
+    <Property Name="ProcessedOn" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_T_Call_T_Company">
+    <End Role="T_Company" Type="CallOutcomeModel.Store.T_Company" Multiplicity="0..1" />
+    <End Role="T_Call" Type="CallOutcomeModel.Store.T_Call" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="T_Call">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Call_T_L_Need">
+    <End Role="T_L_Need" Type="CallOutcomeModel.Store.T_L_Need" Multiplicity="0..1" />
+    <End Role="T_Call" Type="CallOutcomeModel.Store.T_Call" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_L_Need">
+        <PropertyRef Name="NeedID" />
+      </Principal>
+      <Dependent Role="T_Call">
+        <PropertyRef Name="NeedID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Call_T_L_Outcome">
+    <End Role="T_L_Outcome" Type="CallOutcomeModel.Store.T_L_Outcome" Multiplicity="0..1" />
+    <End Role="T_Call" Type="CallOutcomeModel.Store.T_Call" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_L_Outcome">
+        <PropertyRef Name="OutcomeID" />
+      </Principal>
+      <Dependent Role="T_Call">
+        <PropertyRef Name="OutcomeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_CallNeed_T_Call">
+    <End Role="T_Call" Type="CallOutcomeModel.Store.T_Call" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="T_CallNeed" Type="CallOutcomeModel.Store.T_CallNeed" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Call">
+        <PropertyRef Name="CallID" />
+      </Principal>
+      <Dependent Role="T_CallNeed">
+        <PropertyRef Name="CallID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_CallNeed_T_L_Need">
+    <End Role="T_L_Need" Type="CallOutcomeModel.Store.T_L_Need" Multiplicity="1" />
+    <End Role="T_CallNeed" Type="CallOutcomeModel.Store.T_CallNeed" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_L_Need">
+        <PropertyRef Name="NeedID" />
+      </Principal>
+      <Dependent Role="T_CallNeed">
+        <PropertyRef Name="NeedID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_CallNeed_T_L_NeedField">
+    <End Role="T_L_NeedField" Type="CallOutcomeModel.Store.T_L_NeedField" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="T_CallNeed" Type="CallOutcomeModel.Store.T_CallNeed" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_L_NeedField">
+        <PropertyRef Name="NeedFieldID" />
+      </Principal>
+      <Dependent Role="T_CallNeed">
+        <PropertyRef Name="NeedFieldID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_L_NeedField_T_L_Need">
+    <End Role="T_L_Need" Type="CallOutcomeModel.Store.T_L_Need" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="T_L_NeedField" Type="CallOutcomeModel.Store.T_L_NeedField" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_L_Need">
+        <PropertyRef Name="NeedID" />
+      </Principal>
+      <Dependent Role="T_L_NeedField">
+        <PropertyRef Name="NeedID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

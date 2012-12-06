@@ -1,0 +1,9 @@
+C:\Projects\LeadOutcomeSubmission\LeadOutcomeSubmission\bin\Debug\LeadOutcomeSubmission.exe.config
+C:\Projects\LeadOutcomeSubmission\LeadOutcomeSubmission\bin\Debug\LeadOutcomeSubmission.exe
+C:\Projects\LeadOutcomeSubmission\LeadOutcomeSubmission\bin\Debug\LeadOutcomeSubmission.pdb
+C:\Projects\LeadOutcomeSubmission\LeadOutcomeSubmission\obj\Debug\LeadOutcomeSubmission.exe
+C:\Projects\LeadOutcomeSubmission\LeadOutcomeSubmission\obj\Debug\LeadOutcomeSubmission.pdb
+C:\Projects\LeadOutcomeSubmission\LeadOutcomeSubmission\obj\Debug\Perceptionist.Services.LeadOutcomeSubmission.LeadOutcomeSubmission.resources
+C:\Projects\LeadOutcomeSubmission\LeadOutcomeSubmission\obj\Debug\LeadOutcomeSubmission.csproj.GenerateResource.Cache
+C:\Projects\LeadOutcomeSubmission\LeadOutcomeSubmission\obj\Debug\LeadOutcomeSubmission.csprojResolveAssemblyReference.cache
+C:\Projects\LeadOutcomeSubmission\LeadOutcomeSubmission\obj\Debug\Perceptionist.Services.LeadOutcomeSubmission.ProjectInstaller.resources

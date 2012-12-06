@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SBI.MollyMaid.PerceptionistAPI.Service" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SBI.MollyMaid.PerceptionistAPI.Service" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://www.mollymaid.com/lmsapi/wcf_v1/LeadService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SbiLib.Data" />
+  <xs:complexType name="Franchise">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SbiLib.Data" base="q1:LoadableDataObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+          <xs:element minOccurs="0" name="DBA" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FranNum" type="xs:int" />
+          <xs:element minOccurs="0" name="FranchiseId" type="xs:int" />
+          <xs:element minOccurs="0" name="PerceptionistIntegrationEnabled" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PerceptionistLeadPushActivationDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="PerceptionistLeadPushEnabled" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SortName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Franchise" nillable="true" type="tns:Franchise" />
+  <xs:complexType name="Lead">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FranNum" type="xs:int" />
+      <xs:element minOccurs="0" name="LeadAction" nillable="true" type="tns:LeadAction" />
+      <xs:element minOccurs="0" name="LeadDetails" nillable="true" type="tns:LeadDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Lead" nillable="true" type="tns:Lead" />
+  <xs:complexType name="LeadAction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ActionType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LeadActionId" type="xs:int" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Outcome" nillable="true" type="tns:Outcome" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LeadAction" nillable="true" type="tns:LeadAction" />
+  <xs:complexType name="Outcome">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalNotes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CallOutcome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailedCallOutcome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NeedType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Outcome" nillable="true" type="tns:Outcome" />
+  <xs:complexType name="LeadDetail">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/SbiLib.Data" base="q2:LoadableDataObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Bathrooms" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Bedrooms" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactTime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FranNum" type="xs:int" />
+          <xs:element minOccurs="0" name="Frequency" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LeadDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LeadId" type="xs:int" />
+          <xs:element minOccurs="0" name="LeadSource" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LeadStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NationalLeadId" type="xs:int" />
+          <xs:element minOccurs="0" name="NextAction" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Pets" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Phone1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Phone1Type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Phone2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Phone2Type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Phone3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Phone3Type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SquareFeet" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Zip" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LeadDetail" nillable="true" type="tns:LeadDetail" />
+  <xs:complexType name="ArrayOfListItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ListItem" nillable="true" type="tns:ListItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfListItem" nillable="true" type="tns:ArrayOfListItem" />
+  <xs:complexType name="ListItem">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/SbiLib.Data" base="q3:LoadableDataObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ItemName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListItem" nillable="true" type="tns:ListItem" />
+</xs:schema>

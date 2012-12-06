@@ -1,0 +1,14 @@
+C:\Projects\CallOutcomeSubmission\CallOutcomeSubmission\bin\Debug\CallOutcomeSubmission.exe
+C:\Projects\CallOutcomeSubmission\CallOutcomeSubmission\bin\Debug\EntityFramework.dll
+C:\Projects\CallOutcomeSubmission\CallOutcomeSubmission\bin\Debug\CallOutcomeSubmission.exe.config
+C:\Projects\CallOutcomeSubmission\CallOutcomeSubmission\bin\Debug\CallOutcomeSubmission.exe.manifest
+C:\Projects\CallOutcomeSubmission\CallOutcomeSubmission\bin\Debug\CallOutcomeSubmission.application
+C:\Projects\CallOutcomeSubmission\CallOutcomeSubmission\bin\Debug\EntityFramework.xml
+C:\Projects\CallOutcomeSubmission\CallOutcomeSubmission\obj\Debug\Perceptionist.Services.CallOutcomeSubmission.CallOutcomeSubmission.resources
+C:\Projects\CallOutcomeSubmission\CallOutcomeSubmission\obj\Debug\Perceptionist.Services.CallOutcomeSubmission.ProjectInstaller.resources
+C:\Projects\CallOutcomeSubmission\CallOutcomeSubmission\obj\Debug\CallOutcomeSubmission.csproj.GenerateResource.Cache
+C:\Projects\CallOutcomeSubmission\CallOutcomeSubmission\obj\Debug\CallOutcomeSubmission.exe.manifest
+C:\Projects\CallOutcomeSubmission\CallOutcomeSubmission\obj\Debug\CallOutcomeSubmission.application
+C:\Projects\CallOutcomeSubmission\CallOutcomeSubmission\obj\Debug\CallOutcomeSubmission.exe
+C:\Projects\CallOutcomeSubmission\CallOutcomeSubmission\obj\Debug\CallOutcomeSubmission.pdb
+C:\Projects\CallOutcomeSubmission\CallOutcomeSubmission\bin\Debug\CallOutcomeSubmission.pdb
